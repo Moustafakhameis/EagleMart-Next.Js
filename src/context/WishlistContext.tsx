@@ -10,6 +10,7 @@ import { ProductType } from "_/app/_InterFaces/products";
 
 interface WishlistContextType {
   wishlist: ProductType[];
+  loading: boolean;
   addItem: (id: string) => Promise<void>;
   removeItem: (id: string) => Promise<void>;
 }
@@ -18,10 +19,17 @@ const WishlistContext = createContext<WishlistContextType | null>(null);
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const [wishlist, setWishlist] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchWishlist() {
-    const res = await getWishlist();
-    setWishlist(res.data);
+    try {
+      const res = await getWishlist();
+      setWishlist(res?.data || []);
+    } catch (err) {
+      console.error("Error fetching global wishlist:", err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -39,7 +47,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addItem, removeItem }}>
+    <WishlistContext.Provider value={{ wishlist, loading, addItem, removeItem }}>
       {children}
     </WishlistContext.Provider>
   );

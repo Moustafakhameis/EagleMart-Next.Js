@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useWishlist } from "./useWishlist";
+import { useWishlistContext } from "../../context/WishlistContext";
 import { HashLoader } from "react-spinners";
 import { FaTrash} from "react-icons/fa";
 import { Button } from "_/components/ui/button";
@@ -12,14 +12,14 @@ import AddToCartButton from "../_Components/AddToCartButton/AddToCartButton";
 import { ProductType } from "../_InterFaces/products";
 
 export default function WishlistPage() {
-  const { wishlist, loading, handleRemove } = useWishlist();
+  const { wishlist, loading, removeItem } = useWishlistContext();
   const [removingId, setRemovingId] = useState<string | null>(null);
   // const [addingToCartId, setAddingToCartId] = useState<string | null>(null);
 
   async function onRemove(id: string) {
     try {
       setRemovingId(id);
-      await handleRemove(id);
+      await removeItem(id);
     } catch (err) {
       console.error("Remove failed:", err);
     } finally {
