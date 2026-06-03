@@ -15,6 +15,7 @@ import WishlistNavIcon from "./WishlistNavIcon";
 import { getUserCart } from "_/app/_services/cart.service";
 
 import { CartContext } from "_/context/CartContext";
+import { ThemeToggle } from "./ThemeToggle";
 
 
 export default function Navbar() {
@@ -147,6 +148,7 @@ shadow-[0_2px_2px_rgba(0,0,0,0.05),
 
         {/* Right side (desktop) */}
         <div className="hidden md:flex items-center space-x-8">
+          <ThemeToggle />
           {!isAuthenticated && (
             <>
               {/* Login */}
@@ -282,6 +284,13 @@ shadow-[0_2px_2px_rgba(0,0,0,0.05),
             >
               Brands
             </Link>
+          </li>
+
+          <li>
+            <div className="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <span>Theme</span>
+              <ThemeToggle />
+            </div>
           </li>
 
           {/* Separator */}

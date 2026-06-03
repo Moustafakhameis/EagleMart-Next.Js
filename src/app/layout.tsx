@@ -6,6 +6,7 @@
   import { Toaster } from "_/components/ui/sonner";
 import MySessionProvider from "./_Components/MySessionProvider/MySessionProvider";
 import { WishlistProvider } from "_/context/WishlistContext";
+import { ThemeProvider } from "_/components/ThemeProvider";
 
   const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -28,12 +29,11 @@ import { WishlistProvider } from "_/context/WishlistContext";
     children: React.ReactNode;
   }>) {
     return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          suppressHydrationWarning
         >
-
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <MySessionProvider >
 
   <WishlistProvider>
@@ -47,6 +47,7 @@ import { WishlistProvider } from "_/context/WishlistContext";
   </WishlistProvider>
 
           </MySessionProvider>
+          </ThemeProvider>
         </body>
       </html>
     );
