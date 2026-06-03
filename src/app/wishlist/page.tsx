@@ -49,13 +49,13 @@ export default function WishlistPage() {
 
   return (
     <div className="container mx-auto px-6 py-10 min-h-screen">
-      <h1 className="text-center text-4xl font-extrabold mb-10 text-gray-800">
+      <h1 className="text-center text-4xl font-extrabold mb-10 text-gray-800 dark:text-gray-200">
         My Wishlist
       </h1>
 
       {wishlist.length === 0 ? (
         <div className="text-center space-y-4">
-          <p className="text-gray-500 text-lg">Your wishlist is empty 💔</p>
+          <p className="text-gray-500 dark:text-gray-400 text-lg">Your wishlist is empty 💔</p>
           <Link
             href="/products"
             className="inline-block px-5 py-2 rounded-lg bg-pink-500 text-white hover:bg-pink-600 transition"
@@ -68,10 +68,10 @@ export default function WishlistPage() {
           {wishlist.map((item: ProductType) => (
             <div
               key={item._id}
-              className="group relative border rounded-2xl bg-white p-5 flex flex-col items-center shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105"
+              className="group relative border border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-800 p-5 flex flex-col items-center shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105"
             >
               {/* Product Image (relative container + next/image fill) */}
-              <div className="relative w-full h-48 overflow-hidden rounded-lg bg-gray-50">
+              <div className="relative w-full h-48 overflow-hidden rounded-lg bg-gray-50 dark:bg-gray-200">
                 <Image
                   src={item.imageCover || "/placeholder.png"}
                   alt={item.title || "product"}
@@ -82,7 +82,7 @@ export default function WishlistPage() {
               </div>
 
               {/* Product Title */}
-              <h2 className="text-lg font-semibold text-center text-gray-800 mt-4 line-clamp-2">
+              <h2 className="text-lg font-semibold text-center text-gray-800 dark:text-gray-200 mt-4 line-clamp-2">
                 {item.title.split(" ", 3).join(" ")}
               </h2>
 

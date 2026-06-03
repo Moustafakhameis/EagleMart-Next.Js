@@ -13,7 +13,7 @@ export default async function BrandsPage() {
           <Link
             key={brand._id}
             href={`/brands/brandDetails/${brand._id}`}
-            className="bg-pink-100 border rounded-xl p-4 flex flex-col items-center shadow hover:shadow-xl transition"
+            className="bg-pink-100 dark:bg-pink-900/30 border border-gray-200 dark:border-gray-700 rounded-xl p-4 flex flex-col items-center shadow hover:shadow-xl transition"
           >
             {/* <img
               src={brand.image}

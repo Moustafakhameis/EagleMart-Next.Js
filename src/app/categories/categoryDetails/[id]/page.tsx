@@ -27,7 +27,7 @@ export default function CategoryDetailPageClient() {
 
   if (!categoryId) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0] dark:bg-background">
         <p className="text-xl text-red-500 font-semibold">
           Invalid category ID
         </p>
@@ -37,7 +37,7 @@ export default function CategoryDetailPageClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0] dark:bg-background">
         <p className="text-xl text-purple-600 font-semibold">Loading...</p>
       </div>
     );
@@ -45,15 +45,15 @@ export default function CategoryDetailPageClient() {
 
   if (!category) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F7EBF0] dark:bg-background">
         <p className="text-xl text-red-500 font-semibold">Category not found</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-12 bg-[#F7EBF0]">
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl p-10 shadow-2xl border border-purple-600">
+    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-12 bg-[#F7EBF0] dark:bg-background">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl p-10 shadow-2xl border border-purple-600 dark:border-purple-400">
         {/* Header */}
         <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-600 mb-8 text-center">
           {category.name}
@@ -73,7 +73,7 @@ export default function CategoryDetailPageClient() {
         )}
 
         {/* Category Details */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800 text-base">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800 dark:text-gray-200 text-base">
           <div className="flex items-center gap-3">
             <span className="text-purple-500 text-lg">🆔</span>
             <span>ID: {category._id}</span>

@@ -14,8 +14,8 @@ export default function Login() {
     <div className=" min-h-screen flex mt-30 md:mt-0 md:mx-10">
       <div className="container mx-auto md:flex items-stretch">
         <div className="w-full h-full md:flex justify-center items-center">
-          <div className="md:w-1/2 md:h-3/4 p-5 bg-white">
-            <h1 className="text-3xl font-bold uppercase border-b-2 border-red-600 border-dashed w-fit mx-auto  flex justify-center items-center gap-2">
+          <div className="md:w-1/2 md:h-3/4 p-5 bg-white dark:bg-gray-800">
+            <h1 className="text-3xl font-bold uppercase border-b-2 border-red-600 border-dashed w-fit mx-auto  flex justify-center items-center gap-2 dark:text-white">
               Join our community{" "}
               <RiHomeHeartFill className="text-red-600" size={35} />
             </h1>

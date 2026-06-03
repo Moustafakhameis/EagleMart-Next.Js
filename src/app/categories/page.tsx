@@ -7,7 +7,7 @@ export default async function CategoriesPage() {
   const categories: CategoryType[] = await getAllCategories();
 
   return (
-    <div className="min-h-screen bg-[#F7EBF0] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#F7EBF0] dark:bg-background py-12 px-4 sm:px-6 lg:px-8">
       <h1 className="text-5xl font-extrabold text-center text-purple-600 mb-12">
         All Categories
       </h1>
@@ -39,7 +39,7 @@ export default async function CategoriesPage() {
             </h2>
 
             {/* Digital details */}
-            <div className="flex gap-4 text-gray-600 text-sm mt-auto">
+            <div className="flex gap-4 text-gray-600 dark:text-gray-400 text-sm mt-auto">
               <div className="flex items-center gap-1">
                 <span className="text-pink-500">🛒</span>
                 <span>{Math.floor(Math.random() * 100)} Products</span>

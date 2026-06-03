@@ -36,7 +36,7 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Product Image */}
         <div className="flex items-center justify-center">
-          <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+          <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800">
             {/* Discount Badge */}
             {discountPercent && (
               <span className="absolute top-4 left-4 bg-red-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md">
@@ -57,22 +57,22 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
         {/* Product Info */}
         <div className="flex flex-col justify-center">
           {/* Title */}
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
             {specifiedProduct.title}
           </h1>
 
           {/* Category & Brand */}
-          <div className="flex gap-3 mb-4">
-            <span className="px-3 py-1 bg-gray-100 text-sm rounded-full">
+          <div className="flex gap-3 mb-4 text-gray-900 dark:text-gray-100">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full">
               {specifiedProduct.category?.name}
             </span>
-            <span className="px-3 py-1 bg-gray-100 text-sm rounded-full">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full">
               {specifiedProduct.brand?.name}
             </span>
           </div>
 
           {/* Description */}
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             {specifiedProduct.description || "No description available."}
           </p>
 

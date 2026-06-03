@@ -17,10 +17,10 @@ export default async function ProductCard({ product }: ProductCardType) {
     <>
       <div
         key={product.id}
-        className="relative w-75 rounded-3xl overflow-hidden bg-white shadow-[10px_10px_20px_#eab3c0,-10px_-10px_20px_#ffffff] hover:shadow-[0px_0px_25px_#d77c87,0px_0px_25px_#ffffff] transition-all duration-300 ease-in-out transform hover:scale-105"
+        className="relative w-75 rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-[10px_10px_20px_#eab3c0,-10px_-10px_20px_#ffffff] dark:shadow-none hover:shadow-[0px_0px_25px_#d77c87,0px_0px_25px_#ffffff] dark:hover:shadow-pink-500/20 transition-all duration-300 ease-in-out transform hover:scale-105"
       >
         {/* Product Image */}
-        <div className="h-64 flex items-center justify-center bg-white border-t-4 border-b-4 border-white overflow-hidden">
+        <div className="h-64 flex items-center justify-center bg-white dark:bg-gray-200 border-t-4 border-b-4 border-white dark:border-gray-800 overflow-hidden">
           <Image
             src={product.imageCover}
             alt={product.title}
@@ -31,7 +31,7 @@ export default async function ProductCard({ product }: ProductCardType) {
           />
 
           {/* Heart Icon */}
-          <div className="absolute top-1 right-1 border-5 border-black bg-white text-black rounded-full duration-500 cursor-pointer shadow hover:scale-110  transition-transform hover:shadow-lg hover:text-red-600 hover:border-5  hover:bg-pink-300 ">
+          <div className="absolute top-1 right-1 border-5 border-black dark:border-gray-900 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full duration-500 cursor-pointer shadow hover:scale-110  transition-transform hover:shadow-lg hover:text-red-600 dark:hover:text-red-500 hover:border-5  hover:bg-pink-300 dark:hover:bg-pink-900 ">
             {/* <FaHeart size={20} className="text-inherit" /> */}
             {/* <WishlistButton productId={product.id} initialAdded={added} /> */}
             <WishlistButton productId={product.id} />
@@ -63,7 +63,7 @@ export default async function ProductCard({ product }: ProductCardType) {
                 <span className="mr-1">:</span>
                 <p className="text-sm text-gray-500"> {product.quantity}</p>
               </div>
-              <h3 className="text-sm font-medium text-gray-800 line-clamp-2">
+              <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200 line-clamp-2">
                 {/* {product.title.split(" ").slice(0, 3).join(" ")} */}
                 {product.brand.name}
               </h3>
@@ -74,14 +74,14 @@ export default async function ProductCard({ product }: ProductCardType) {
               </div>
             </div>
             <div className="flex justify-center items-center mb-2 mt-2">
-              <h3 className="text-sm font-medium text-gray-800 line-clamp-2">
+              <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200 line-clamp-2">
                 {/* {product.title.split(" ").slice(0, 3).join(" ")} */}
                 {product.title.split(" ", 3).join(" ")}
               </h3>
               {/* Rating */}
             </div>
             {/* <p className="text-lg font-bold text-gray-900">${product.priceAfterDiscount ?? product.price}</p> */}
-            <p className="text-lg font-bold text-gray-900">
+            <p className="text-lg font-bold text-gray-900 dark:text-white">
               {product.priceAfterDiscount ? (
                 <>
                   <span>${product.priceAfterDiscount}</span>{" "}

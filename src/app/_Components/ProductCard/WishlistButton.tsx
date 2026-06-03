@@ -202,7 +202,7 @@ export default function WishlistButton({ productId }: { productId: string }) {
       disabled={loading}
       onClick={toggleWishlist}
       className={`p-2 rounded-full transition ${
-        isInWishlist ? "bg-pink-300 text-red-600" : "bg-white text-black"
+        isInWishlist ? "bg-pink-300 dark:bg-pink-900/50 text-red-600 dark:text-red-400" : "bg-white dark:bg-gray-800 text-black dark:text-gray-300"
       }`}
     >
       {loading ? (

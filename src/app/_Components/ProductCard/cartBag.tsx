@@ -31,9 +31,9 @@ export default function CartBag({ productId }: { productId: string }) {
   return (
     <div
       onClick={handleAddToCart}
-      className="bg-white rounded-tr-3xl rounded-tl-3xl pt-12 pe-2 ps-2 cursor-pointer -mt-6 flex justify-center items-center relative"
+      className="bg-white dark:bg-gray-800 rounded-tr-3xl rounded-tl-3xl pt-12 pe-2 ps-2 cursor-pointer -mt-6 flex justify-center items-center relative"
     >
-      <div className="absolute top-1 text-white bg-black rounded-full border-8 border-white p-4 cursor-pointer hover:scale-105 transition-all duration-500 -mt-6 hover:shadow-lg hover:bg-pink-500 hover:border-black hover:text-black">
+      <div className="absolute top-1 text-white dark:text-gray-900 bg-black dark:bg-white rounded-full border-8 border-white dark:border-gray-800 p-4 cursor-pointer hover:scale-105 transition-all duration-500 -mt-6 hover:shadow-lg hover:bg-pink-500 dark:hover:bg-pink-400 hover:border-black dark:hover:border-white hover:text-black">
         <FaBagShopping size={26} className="text-inherit" />
       </div>
     </div>

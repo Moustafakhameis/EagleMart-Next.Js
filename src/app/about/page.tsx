@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="bg-white text-black min-h-screen px-6 py-12 lg:px-20 lg:py-16">
+    <div className="bg-white dark:bg-background text-black dark:text-white min-h-screen px-6 py-12 lg:px-20 lg:py-16">
       {/* Hero Section */}
       <MotionSection className="text-center space-y-6" variant="fadeInUp">
         <div className="flex justify-center items-center">
@@ -21,7 +21,7 @@ export default function About() {
         <h1 className="text-4xl md:text-5xl font-extrabold text-purple-700">
           About EagleMart
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           EagleMart is your trusted online marketplace for the latest clothing
           trends and cutting-edge tech gadgets. Our mission is to bring style
           and technology together in one seamless shopping experience.
@@ -31,24 +31,24 @@ export default function About() {
       {/* Vision & Mission */}
       <div className="grid md:grid-cols-2 gap-8 mt-16">
         <MotionSection
-          className="p-6 rounded-2xl shadow-md bg-pink-100 hover:shadow-xl transition"
+          className="p-6 rounded-2xl shadow-md bg-pink-100 dark:bg-pink-900/30 hover:shadow-xl transition"
           variant="fadeInLeft"
         >
-          <h2 className="text-2xl font-bold text-purple-800 mb-4">
+          <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-400 mb-4">
             Our Vision
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-gray-300">
             To be the leading e-commerce hub that inspires lifestyle choices
             through fashion and technology.
           </p>
         </MotionSection>
 
         <MotionSection
-          className="p-6 rounded-2xl shadow-md bg-purple-100 hover:shadow-xl transition"
+          className="p-6 rounded-2xl shadow-md bg-purple-100 dark:bg-purple-900/30 hover:shadow-xl transition"
           variant="fadeInRight"
         >
-          <h2 className="text-2xl font-bold text-pink-600 mb-4">Our Mission</h2>
-          <p className="text-gray-700">
+          <h2 className="text-2xl font-bold text-pink-600 dark:text-pink-400 mb-4">Our Mission</h2>
+          <p className="text-gray-700 dark:text-gray-300">
             Deliver top-quality products at the best prices, backed by
             exceptional customer service and innovation.
           </p>
@@ -69,9 +69,9 @@ export default function About() {
           ].map((value, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl bg-white border border-gray-200 shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
+              className="p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition transform hover:-translate-y-2"
             >
-              <h3 className="text-xl font-semibold text-pink-600">{value}</h3>
+              <h3 className="text-xl font-semibold text-pink-600 dark:text-pink-400">{value}</h3>
             </div>
           ))}
         </div>
@@ -84,10 +84,10 @@ export default function About() {
 
       {/* CTA Section */}
       <MotionSection className="mt-28 text-center" variant="fadeInUp">
-        <h2 className="text-3xl font-bold text-purple-700 mb-6">
+        <h2 className="text-3xl font-bold text-purple-700 dark:text-purple-400 mb-6">
           Ready to Explore EagleMart?
         </h2>
-        <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
           Discover the best fashion and tech products tailored just for you.
           Start your journey today!
         </p>

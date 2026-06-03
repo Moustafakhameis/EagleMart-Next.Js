@@ -92,7 +92,7 @@ const item = {
 
 export default function TeamSection() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-purple-600">
           Meet Our Team
@@ -114,7 +114,7 @@ export default function TeamSection() {
                 transition: { type: "spring", stiffness: 200, damping: 10 },
               }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white shadow-md rounded-2xl p-6 cursor-pointer group"
+              className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 cursor-pointer group border border-transparent dark:border-gray-700"
             >
               <div className="relative w-24 h-24 mx-auto mb-4">
                 <Image
@@ -124,8 +124,8 @@ export default function TeamSection() {
                   className="rounded-full object-contain border-2 border-pink-500"
                 />
               </div>
-              <h3 className="font-bold text-lg text-gray-900">{member.name}</h3>
-              <p className="text-gray-600 text-sm mb-4">{member.role}</p>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{member.role}</p>
 
               {/* Social Icons */}
               <div className="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -152,7 +152,7 @@ export default function TeamSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="text-gray-800 hover:text-black transition-colors"
+                  className="text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                 >
                   <FaGithub size={20} />
                 </a>

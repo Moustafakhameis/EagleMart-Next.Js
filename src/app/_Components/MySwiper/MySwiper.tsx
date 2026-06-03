@@ -68,7 +68,7 @@ export default function MySwiper({
                 />
               </div>
               {name && (
-                <h1 className="text-center text-gray-800 text-xl font-medium mt-2">
+                <h1 className="text-center text-gray-800 dark:text-gray-200 text-xl font-medium mt-2">
                   {name}
                 </h1>
               )}
