@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState, useEffect } from "react";
+import { getUserCart } from "_/app/_services/cart.service";
 
 interface CartContextType {
   cartCount: number;
@@ -12,6 +13,12 @@ export const CartContext = createContext<CartContextType>({
 
 export function CartContextProvider({ children }: { children: ReactNode }) {
   const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    getUserCart().then((res) => {
+      setCartCount(res?.numOfCartItems ?? 0);
+    }).catch((err) => console.error(err));
+  }, []);
 
   function updateCartCount(newCount: number) {
     setCartCount(newCount);

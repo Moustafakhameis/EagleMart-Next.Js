@@ -32,14 +32,7 @@ export default function Navbar() {
 const { data: session } = useSession();
 const isAuthenticated = !!session;
 
-const [initialCartCount, setCartCount] = useState(0);
 const { cartCount } = useContext(CartContext);
-
-useEffect(() => {
-    getUserCart().then((res) => {
-        setCartCount(res?.numOfCartItems ?? 0);
-    });
-}, []);
 
 
 
@@ -215,7 +208,7 @@ shadow-[0_2px_2px_rgba(0,0,0,0.05),
                   <path d="M11 6h8.72a2 2 0 0 1 2 1.61L23 11"></path>
                 </svg>
                 <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">
-                  { cartCount || initialCartCount}
+                  { cartCount }
                 </span>
               </Link>
               {/* <Link
@@ -350,7 +343,7 @@ shadow-[0_2px_2px_rgba(0,0,0,0.05),
                   <span>Cart</span>
                   <MdShoppingCartCheckout className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:animate-spin" />
                   <span className="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">
-                   { cartCount || initialCartCount}
+                   { cartCount }
                   </span>
                 </Link>
               </li>
