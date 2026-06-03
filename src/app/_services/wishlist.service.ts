@@ -18,10 +18,14 @@ async function getAuthHeaders() {
 }
 
 export async function getWishlist() {
-  const headers = await getAuthHeaders();
-  const res = await fetch(BASE_URL, { method: "GET", headers, cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to fetch wishlist");
-  return res.json();
+  try {
+    const headers = await getAuthHeaders();
+    const res = await fetch(BASE_URL, { method: "GET", headers, cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch wishlist");
+    return await res.json();
+  } catch (error) {
+    return { data: [] };
+  }
 }
 
 export async function addToWishlist(productId: string) {

@@ -31,6 +31,7 @@ import { WishlistProvider } from "_/context/WishlistContext";
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          suppressHydrationWarning
         >
 
           <MySessionProvider >
